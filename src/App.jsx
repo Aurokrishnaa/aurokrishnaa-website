@@ -120,9 +120,9 @@ const Layout = () => {
 }
 
 function App() {
-  // Main Router
+  // Main Router - basename needed for GitHub Pages subdirectory deployment
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Layout />
     </Router>
   );

@@ -1,154 +1,159 @@
-# Aurokrishnaa Ravindran Lakshmi - Portfolio Website
+# Aurokrishnaa Ravindran Lakshmi
+Personal Portfolio Website | Quantitative Finance and Financial Analytics
 
-This is my personal portfolio website - a space where I bring together my work in financial analytics, quantitative finance, and applied research. It's built to give recruiters, collaborators, and fellow finance professionals a clear picture of what I do and how I think.
+This repository hosts the source code for my personal portfolio website. It brings together my academic background, professional experience, and applied work across quantitative finance, financial analytics, investment research, and financial technology.
 
-**Live:** [aurokrishnaa.me](https://aurokrishnaa.me)
+This is a personal body of work. 
+It is not a template, starter kit, or reusable project.
 
----
-
-## What You'll Find Here
-
-The site covers my professional journey across derivatives pricing, fixed income analytics, portfolio optimization, algorithmic trading, and financial modeling. Each section is designed to show depth without overwhelming - whether you're skimming for highlights or digging into project details.
-
-### Sections
-
-| Section | What It Covers |
-|---------|----------------|
-| **Hero** | Quick intro - who I am, what I do, credentials at a glance |
-| **Education** | MS Finance (Quant) from UB, MBA from Anna University, and more |
-| **Experience** | Professional roles in analytics, research, and finance |
-| **Projects** | 25+ applied projects - derivatives, portfolio theory, NLP, trading systems |
-| **Research** | Published work including Black-Scholes-Merton analysis and banking thesis |
-| **Resume** | Embedded PDF viewer with download option |
-| **Contact** | Direct links to reach me |
+Live website: https://aurokrishnaa.me
 
 ---
 
-## Tech Stack
+## Why This Exists
 
-The frontend is built with modern tooling for performance and clean animations:
+A resume is useful, but it rarely shows how someone actually thinks. 
 
-```
-React 19          UI framework with component architecture
-Vite              Build tool - fast HMR, optimized production builds
-Tailwind CSS 4    Utility-first styling with custom design tokens
-Framer Motion     Physics-based animations and page transitions
-React Router 7    Client-side routing with smooth navigation
-```
+This website exists to present my work in a more honest and complete way. It reflects how I approach financial problems, how I learn, and how my interests have evolved across markets, instruments, and analytical methods. 
 
-### Project Structure
+Some sections are meant to be scanned quickly. Others are meant to be explored slowly. Everything here is intentional.
 
-```
+---
+
+## Academic Background
+
+My academic path has been broad by design and progressively more quantitative over time. I hold the following degrees and qualifications:
+
+* **Master of Science in Finance (Quantitative Finance)**
+  University at Buffalo, SUNY
+  Focus on derivatives, fixed income, portfolio theory, quantitative methods, and financial modeling.
+
+* **Master of Business Administration (Finance)**
+  Anna University
+  Strong grounding in corporate finance, investment analysis, strategy, and applied business decision-making.
+
+* **Master of Commerce (Accounting and Finance)**
+  Advanced exposure to accounting, taxation, financial reporting, and analytical finance.
+
+* **Diploma in Goods and Services Tax (GST)**
+  Specialized study of indirect taxation and regulatory compliance in India.
+
+* **Bachelor of Commerce (Finance and Accounting)**
+  Foundation in accounting, economics, business law, and financial systems.
+
+While I do not always list every credential publicly, this repository reflects the full academic arc that shaped my thinking.
+
+---
+
+## Professional Experience
+
+My professional experience spans finance management, analytics, education, and applied research. I have worked in roles involving:
+
+* Financial analysis and reporting.
+* Budgeting, forecasting, and fund tracking.
+* Investment-related decision support.
+* Academic support and teaching in quantitative finance and derivatives.
+* Project-based analytical and research work.
+
+Alongside formal roles, I have consistently worked on independent projects that combine finance with programming, data analysis, and modeling. I am most interested in roles where analytical rigor, market intuition, and structured problem-solving matter more than buzzwords.
+
+---
+
+## Core Areas of Work
+
+My work sits at the intersection of several financial domains rather than a single narrow niche.
+
+### Derivatives and Volatility
+* Black-Scholes-Merton pricing with Greeks and hedging intuition.
+* Volatility modeling and VIX replication.
+* Structured payoff analysis and asymmetric risk profiles.
+
+### Portfolio Construction and Risk
+* Multi-asset portfolio optimization using simulation techniques.
+* Risk measurement using VaR, drawdowns, and stress testing.
+* Strategy design informed by both theory and market behavior.
+
+### Fixed Income and Rates
+* Bond analytics including duration, convexity, and spread analysis.
+* Yield curve interpretation and scenario-based analysis.
+* Portfolio modeling using institutional-style tools.
+
+### FinTech and Automation
+* Algorithmic trading systems with live brokerage integration.
+* NLP-based analysis of earnings calls and corporate disclosures.
+* Interactive dashboards for financial analysis and visualization.
+
+---
+
+## Technical Stack
+
+The website is built using a modern, performance-focused frontend stack.
+
+| Technology | Implementation |
+|:---|:---|
+| React 19 | Component-based user interface |
+| Vite | Fast development and optimized builds |
+| Tailwind CSS 4 | Utility-first styling with a consistent design system |
+| Framer Motion | Subtle animations and transitions |
+| React Router 7 | Client-side routing and navigation |
+
+---
+
+## Project Structure
+
+The codebase is organized to keep content, layout, and logic clearly separated.
+
+```text
 src/
 ├── components/
-│   ├── Hero.jsx           # Landing section with animated orbs
-│   ├── Education.jsx      # Academic timeline with coursework expansion
-│   ├── Experience.jsx     # Professional roles and highlights
-│   ├── Projects.jsx       # Filterable project grid (25+ entries)
-│   ├── Research.jsx       # Published papers with external links
-│   ├── Contact.jsx        # Social links and contact form
-│   ├── Navbar.jsx         # Responsive navigation with mobile drawer
-│   └── Sidebar.jsx        # Quick-access social icons
-│
+│   ├── Hero.jsx
+│   ├── Education.jsx
+│   ├── Experience.jsx
+│   ├── Projects.jsx
+│   ├── Research.jsx
+│   ├── Contact.jsx
+│   ├── Navbar.jsx
+│   └── Sidebar.jsx
 ├── pages/
-│   └── Resume.jsx         # PDF embed with mobile-optimized viewer
-│
+│   └── Resume.jsx
 ├── data/
-│   ├── profile.js         # Personal info, social links, bio
-│   ├── education.js       # Degrees, coursework by category
-│   ├── experience.js      # Roles, companies, achievements
-│   └── projects.js        # 25+ projects with tools and details
-│
+│   ├── profile.js
+│   ├── education.js
+│   ├── experience.js
+│   └── projects.js
 ├── utils/
-│   └── smoothScroll.js    # Custom eased scroll behavior
-│
-├── App.jsx                # Route definitions and layout
-├── index.css              # Tailwind config, custom animations
-└── main.jsx               # React entry point
-```
+│   └── smoothScroll.js
+├── App.jsx
+├── index.css
+└── main.jsx
 
-```
 public/
-├── profile.jpg              # Profile image
-├── Resume_Aurokrishnaa.pdf  # Downloadable resume
-└── favicon.svg              # Custom monogram icon
+├── profile.jpg
+├── Resume_Aurokrishnaa.pdf
+└── favicon.svg
 ```
 
 ---
 
-## Featured Projects
+## About This Repository
 
-A few highlights from the projects section:
+This repository is public for visibility, not reuse.
 
-**Derivatives & Pricing**
-- Black-Scholes-Merton option pricing with Greeks computation and Delta hedging
-- VIX Index replication using SPX options and variance swap formulas in R
-- Pershing Square pandemic trade analysis - CDS structures and payoff asymmetry
+* It is not intended to be cloned.
+* It is not maintained as a framework.
+* It reflects personal choices in structure, content, and presentation.
 
-**Portfolio & Risk**
-- Multi-asset portfolio optimization with Monte Carlo simulation (1,000 paths)
-- Value at Risk modeling with historical simulation and parametric methods
-- Strategic long-short portfolio design targeting behavioral alpha
-
-**FinTech & Automation**
-- Algorithmic trading via IBridgePy with live IBKR integration
-- NLP sentiment analysis on earnings calls using LLMs
-- Interactive SHINY dashboards for technical analysis
-
-**Fixed Income**
-- Large-scale swap portfolio modeling in Yield Book
-- Bond analytics with duration, convexity, OAS, and spread analysis
+If something here inspires an idea, that is fine. If you are looking for a reusable codebase, this is not that.
 
 ---
 
-## Local Development
+## Contact
 
-Clone and install:
+The site is hosted using GitHub Pages with a custom domain. Production builds are generated from the main branch and served at aurokrishnaa.me.
 
-```bash
-git clone https://github.com/Aurokrishnaa/Personal-Website.git
-cd Personal-Website
-npm install
-```
+If something here aligns with your work or interests, you can reach me through:
 
-Run the dev server:
-
-```bash
-npm run dev
-```
-
-Build for production:
-
-```bash
-npm run build
-```
-
-The build outputs to `dist/` - static files ready for deployment.
-
----
-
-## Deployment
-
-Hosted on GitHub Pages with a custom domain. The production build is generated from the `main` branch and served at [aurokrishnaa.me](https://aurokrishnaa.me).
-
----
-
-## Connect
-
-I'm always open to conversations about quant finance, analytics roles, or interesting problems.
-
-| Platform | Link |
-|----------|------|
-| LinkedIn | [linkedin.com/in/aurokrishnaa](https://www.linkedin.com/in/aurokrishnaa/) |
-| GitHub | [github.com/Aurokrishnaa](https://github.com/Aurokrishnaa) |
-| Blog | [auronomics.com](https://auronomics.com) |
-| X (Twitter) | [x.com/Aurokrishnaa](https://x.com/Aurokrishnaa) |
-| Email | aurokrishnaa2000@gmail.com |
-
----
-
-## Screenshot
-
-![Website Preview](screenshot.png)
-
-*Add a screenshot named `screenshot.png` to display a preview here.*
+* LinkedIn: https://www.linkedin.com/in/aurokrishnaa/
+* GitHub: https://github.com/Aurokrishnaa
+* Writing and experiments: https://auronomics.com
+* Email: aurokrishnaa2000@gmail.com

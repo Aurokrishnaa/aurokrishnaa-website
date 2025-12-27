@@ -1,6 +1,9 @@
 import React from 'react';
 import { FaDownload, FaExternalLinkAlt, FaFilePdf } from 'react-icons/fa';
 
+const BASE = import.meta.env.BASE_URL;
+const RESUME_PATH = `${BASE}Resume_Aurokrishnaa.pdf`;
+
 const Resume = () => {
     return (
         <div className="py-10 animate-fade-in">
@@ -8,7 +11,7 @@ const Resume = () => {
                 <h1 className="text-3xl font-bold text-slate-800">Resume</h1>
 
                 <a
-                    href="/Resume_Aurokrishnaa.pdf"
+                    href={RESUME_PATH}
                     download="Resume_Aurokrishnaa.pdf"
                     className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold shadow-md transition-all active:scale-95"
                 >
@@ -30,7 +33,7 @@ const Resume = () => {
 
                 <div className="flex gap-3">
                     <a
-                        href="/Resume_Aurokrishnaa.pdf"
+                        href={RESUME_PATH}
                         download="Resume_Aurokrishnaa.pdf"
                         className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-bold shadow-md transition-all active:scale-95"
                     >
@@ -38,7 +41,7 @@ const Resume = () => {
                     </a>
 
                     <a
-                        href="/Resume_Aurokrishnaa.pdf"
+                        href={RESUME_PATH}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white border-2 border-slate-200 text-slate-700 rounded-xl font-semibold transition-all active:scale-95"
@@ -52,14 +55,14 @@ const Resume = () => {
             <div className="md:hidden mt-6">
                 <p className="text-sm font-medium text-slate-500 mb-3">Preview</p>
                 <a
-                    href="/Resume_Aurokrishnaa.pdf"
+                    href={RESUME_PATH}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block relative w-full bg-slate-50 border border-slate-200 shadow-sm rounded-xl overflow-hidden group"
                 >
                     {/* PDF Preview */}
                     <iframe
-                        src="/Resume_Aurokrishnaa.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                        src={`${RESUME_PATH}#toolbar=0&navpanes=0&scrollbar=0`}
                         className="w-full h-[500px] border-none pointer-events-none"
                         title="Resume Preview"
                     />
@@ -79,7 +82,7 @@ const Resume = () => {
             {/* Desktop/Tablet: PDF Viewer */}
             <div className="hidden md:block w-full bg-slate-50 border border-slate-200 shadow-sm rounded-lg overflow-hidden p-1">
                 <iframe
-                    src="/Resume_Aurokrishnaa.pdf"
+                    src={RESUME_PATH}
                     className="w-full h-[1200px] border-none"
                     title="Resume Viewer"
                 />
@@ -88,7 +91,7 @@ const Resume = () => {
             <div className="hidden md:block mt-8 text-center">
                 <p className="text-slate-500 mb-4">Having trouble viewing?</p>
                 <a
-                    href="/Resume_Aurokrishnaa.pdf"
+                    href={RESUME_PATH}
                     target="_blank"
                     className="text-blue-600 font-medium hover:underline"
                 >

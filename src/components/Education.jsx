@@ -49,16 +49,17 @@ const EducationItem = ({ edu, index }) => {
                     <p className="text-slate-500 ml-[52px] mt-1 text-lg font-medium">{edu.institution}</p>
                 </div>
 
-                <div className="flex flex-row md:flex-col justify-between items-center md:items-end ml-[52px] md:ml-0">
+                <div className="flex flex-col items-start md:items-end gap-3 ml-[52px] md:ml-0 mt-2 md:mt-0">
                     <span className="inline-block px-4 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold tracking-wider uppercase rounded-full whitespace-nowrap border border-slate-200">
                         {edu.period}
                     </span>
                     {hasCoursework && (
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="mt-4 px-4 py-2 bg-blue-50 text-blue-900 border border-blue-200 text-xs font-semibold rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-blue-100 hover:border-blue-300 uppercase tracking-wider"
+                            className="px-4 py-2 bg-blue-50 text-blue-900 border border-blue-200 text-xs font-semibold rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-blue-100 hover:border-blue-300 uppercase tracking-wider"
                         >
-                            {isOpen ? 'Close Coursework' : 'View Program Coursework'}
+                            <span className="hidden sm:inline">{isOpen ? 'Close Coursework' : 'View Program Coursework'}</span>
+                            <span className="sm:hidden">{isOpen ? 'Close' : 'View Coursework'}</span>
                             {isOpen ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
                         </button>
                     )}

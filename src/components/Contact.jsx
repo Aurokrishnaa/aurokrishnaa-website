@@ -75,41 +75,44 @@ const Contact = () => {
                             <div className="space-y-6">
 
                                 {/* Location */}
-                                <div className="flex items-center gap-5 group">
-                                    <div className="w-14 h-14 flex items-center justify-center bg-white rounded-xl border border-slate-200 text-slate-400 group-hover:text-blue-900 group-hover:border-blue-900/30 transition-all duration-300 shadow-card">
-                                        <FaMapMarkerAlt size={22} />
+                                <div className="flex items-center gap-4 md:gap-5 group">
+                                    <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center bg-white rounded-xl border border-slate-200 text-slate-400 group-hover:text-blue-900 group-hover:border-blue-900/30 transition-all duration-300 shadow-card">
+                                        <FaMapMarkerAlt size={20} className="md:hidden" />
+                                        <FaMapMarkerAlt size={22} className="hidden md:block" />
                                     </div>
                                     <div>
                                         <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Location</p>
-                                        <p className="text-lg text-slate-800 font-semibold">New York, USA</p>
+                                        <p className="text-base md:text-lg text-slate-800 font-semibold">New York, USA</p>
                                     </div>
                                 </div>
 
                                 {/* Email */}
                                 <a
                                     href="mailto:aurokrishnaa2000@gmail.com"
-                                    className="flex items-center gap-5 group"
+                                    className="flex items-center gap-4 md:gap-5 group"
                                 >
-                                    <div className="w-14 h-14 flex items-center justify-center bg-white rounded-xl border border-slate-200 text-slate-400 group-hover:text-blue-900 group-hover:border-blue-900/30 transition-all duration-300 shadow-card">
-                                        <FaEnvelope size={22} />
+                                    <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center bg-white rounded-xl border border-slate-200 text-slate-400 group-hover:text-blue-900 group-hover:border-blue-900/30 transition-all duration-300 shadow-card">
+                                        <FaEnvelope size={20} className="md:hidden" />
+                                        <FaEnvelope size={22} className="hidden md:block" />
                                     </div>
-                                    <div>
+                                    <div className="min-w-0">
                                         <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Email</p>
-                                        <p className="text-lg text-slate-800 font-semibold group-hover:text-blue-900 transition-colors">aurokrishnaa2000@gmail.com</p>
+                                        <p className="text-base md:text-lg text-slate-800 font-semibold group-hover:text-blue-900 transition-colors truncate">aurokrishnaa2000@gmail.com</p>
                                     </div>
                                 </a>
 
                                 {/* Phone */}
                                 <a
                                     href="tel:+17164658491"
-                                    className="flex items-center gap-5 group"
+                                    className="flex items-center gap-4 md:gap-5 group"
                                 >
-                                    <div className="w-14 h-14 flex items-center justify-center bg-white rounded-xl border border-slate-200 text-slate-400 group-hover:text-emerald-600 group-hover:border-emerald-600/30 transition-all duration-300 shadow-card">
-                                        <FaPhone size={22} />
+                                    <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center bg-white rounded-xl border border-slate-200 text-slate-400 group-hover:text-emerald-600 group-hover:border-emerald-600/30 transition-all duration-300 shadow-card">
+                                        <FaPhone size={20} className="md:hidden" />
+                                        <FaPhone size={22} className="hidden md:block" />
                                     </div>
                                     <div>
                                         <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Phone</p>
-                                        <p className="text-lg text-slate-800 font-semibold group-hover:text-emerald-600 transition-colors">+1 (716) 465-8491</p>
+                                        <p className="text-base md:text-lg text-slate-800 font-semibold group-hover:text-emerald-600 transition-colors">+1 (716) 465-8491</p>
                                     </div>
                                 </a>
                             </div>

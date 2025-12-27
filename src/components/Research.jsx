@@ -40,13 +40,13 @@ const Research = () => {
                             </div>
                         </div>
 
-                        <div className="flex-grow pl-[68px]">
+                        <div className="flex-grow pl-0 md:pl-[68px] mt-4 md:mt-0">
                             <p className="text-sm text-slate-600 leading-relaxed mb-6">
                                 {paper.description}
                             </p>
                         </div>
 
-                        <div className="pl-[68px] mt-auto">
+                        <div className="pl-0 md:pl-[68px] mt-auto">
                             <a
                                 href={paper.link}
                                 target="_blank"

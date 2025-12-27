@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { profileData } from '../data/profile';
 import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaMapMarkerAlt, FaPhone, FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
 import { HiX } from 'react-icons/hi';
@@ -8,7 +8,8 @@ import { smoothScrollTo } from '../utils/smoothScroll';
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
     const location = useLocation();
-    const isHome = location.pathname === '/';
+    const navigate = useNavigate();
+    const isHome = location.pathname === '/' || location.pathname === '';
 
     // Navigation links for mobile drawer
     const navLinks = [
@@ -32,13 +33,20 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
         };
     }, [isMobileOpen]);
 
-    // Handle navigation click - scroll to section and close drawer
+    // Handle navigation click - navigate to home if needed, then scroll to section
     const handleNavClick = (id) => {
         setIsMobileOpen(false);
         if (isHome) {
+            // Already on home, just scroll
             setTimeout(() => {
-                smoothScrollTo(id, 900, 80); // Custom smooth scroll with easing
-            }, 300); // Wait for drawer to close
+                smoothScrollTo(id, 900, 80);
+            }, 300);
+        } else {
+            // Navigate to home first, then scroll after page loads
+            navigate('/');
+            setTimeout(() => {
+                smoothScrollTo(id, 900, 80);
+            }, 400);
         }
     };
 

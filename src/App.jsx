@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Sidebar from './components/Sidebar';
@@ -10,6 +10,13 @@ import Education from './components/Education';
 import Research from './components/Research';
 import Contact from './components/Contact';
 import Resume from './pages/Resume';
+
+// Lazy load below-fold sections for better initial load
+const LazyEducation = lazy(() => import('./components/Education').then(m => ({ default: m.default })));
+const LazyExperience = lazy(() => import('./components/Experience').then(m => ({ default: m.default })));
+const LazyProjects = lazy(() => import('./components/Projects').then(m => ({ default: m.default })));
+const LazyResearch = lazy(() => import('./components/Research').then(m => ({ default: m.default })));
+const LazyContact = lazy(() => import('./components/Contact').then(m => ({ default: m.default })));
 
 // Main Landing Page Layout
 const Home = () => {
@@ -26,23 +33,33 @@ const Home = () => {
       {/* Rest of Content - Normal Block Layout */}
       <div className="space-y-24 md:space-y-32 pb-32 pt-12 md:pt-16 px-4 sm:px-6 md:px-12 lg:px-16 max-w-6xl mx-auto w-full">
         <section id="education" className="scroll-mt-32">
-          <Education />
+          <Suspense fallback={<div className="h-64" />}>
+            <LazyEducation />
+          </Suspense>
         </section>
 
         <section id="experience" className="scroll-mt-32">
-          <Experience />
+          <Suspense fallback={<div className="h-64" />}>
+            <LazyExperience />
+          </Suspense>
         </section>
 
         <section id="projects" className="scroll-mt-32">
-          <Projects />
+          <Suspense fallback={<div className="h-64" />}>
+            <LazyProjects />
+          </Suspense>
         </section>
 
         <section id="research" className="scroll-mt-32">
-          <Research />
+          <Suspense fallback={<div className="h-64" />}>
+            <LazyResearch />
+          </Suspense>
         </section>
 
         <section id="contact" className="scroll-mt-32 pt-8">
-          <Contact />
+          <Suspense fallback={<div className="h-64" />}>
+            <LazyContact />
+          </Suspense>
         </section>
       </div>
     </>

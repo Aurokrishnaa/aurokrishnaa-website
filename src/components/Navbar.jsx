@@ -1,44 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { profileData } from '../data/profile';
 import { HiMenu } from 'react-icons/hi';
 import { FaExternalLinkAlt, FaDownload } from 'react-icons/fa';
 import { smoothScrollTo } from '../utils/smoothScroll';
 
-const Navbar = ({ toggleMobileSidebar }) => {
+const Navbar = memo(({ toggleMobileSidebar }) => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('hero');
     const location = useLocation();
     const isHome = location.pathname === '/';
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 20);
 
-            // Track active section for highlighting
-            if (!isHome) return;
+                    // Track active section for highlighting
+                    if (isHome) {
+                        const sections = ['hero', 'education', 'experience', 'projects', 'research', 'contact'];
+                        const scrollPosition = window.scrollY + 150;
 
-            const sections = ['hero', 'education', 'experience', 'projects', 'research', 'contact'];
-            const scrollPosition = window.scrollY + 150;
+                        for (let i = sections.length - 1; i >= 0; i--) {
+                            const section = document.getElementById(sections[i]);
+                            if (section && section.offsetTop <= scrollPosition) {
+                                setActiveSection(sections[i]);
+                                break;
+                            }
+                        }
+                    }
 
-            for (let i = sections.length - 1; i >= 0; i--) {
-                const section = document.getElementById(sections[i]);
-                if (section && section.offsetTop <= scrollPosition) {
-                    setActiveSection(sections[i]);
-                    break;
-                }
+                    ticking = false;
+                });
+                ticking = true;
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll(); // Initial check
         return () => window.removeEventListener('scroll', handleScroll);
     }, [isHome]);
 
-    const scrollToSection = (id) => {
+    const scrollToSection = useCallback((id) => {
         if (!isHome) return;
         smoothScrollTo(id, 900, 80); // 900ms duration, 80px offset for header
-    };
+    }, [isHome]);
 
     const navLinks = [
         { name: 'Home', id: 'hero' },
@@ -62,7 +71,7 @@ const Navbar = ({ toggleMobileSidebar }) => {
                 {/* Mobile: Hamburger (Triggers Sidebar) */}
                 <button
                     onClick={toggleMobileSidebar}
-                    className="lg:hidden p-3 bg-white/95 backdrop-blur-md border border-slate-200 rounded-full shadow-card text-slate-600 hover:text-blue-900 hover:border-blue-900/20 transition-all duration-300 active:scale-95"
+                    className="lg:hidden p-3 bg-white/98 border border-slate-200 rounded-full shadow-card text-slate-600 hover:text-blue-900 hover:border-blue-900/20 transition-all duration-300 active:scale-95"
                 >
                     <HiMenu size={22} />
                 </button>
@@ -78,7 +87,7 @@ const Navbar = ({ toggleMobileSidebar }) => {
                 </Link>
 
                 {/* Desktop: Unified Floating Dock */}
-                <nav className={`hidden lg:flex items-center gap-1 p-1.5 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-full transition-all duration-500 ${scrolled ? 'shadow-premium' : 'shadow-card'}`}>
+                <nav className={`hidden lg:flex items-center gap-1 p-1.5 bg-white/95 border border-slate-200/80 rounded-full transition-all duration-500 ${scrolled ? 'shadow-premium' : 'shadow-card'}`}>
 
                     {/* Section Links */}
                     {isHome ? (
@@ -130,6 +139,8 @@ const Navbar = ({ toggleMobileSidebar }) => {
             </div>
         </header >
     );
-};
+});
+
+Navbar.displayName = 'Navbar';
 
 export default Navbar;

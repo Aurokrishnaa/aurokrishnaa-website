@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { profileData } from '../data/profile';
 import { smoothScrollTo } from '../utils/smoothScroll';
 
-const Hero = () => {
+const Hero = memo(() => {
     // Custom smooth scroll handler for CTA buttons
     const handleScroll = (id) => {
         smoothScrollTo(id, 900, 80);
@@ -15,13 +15,10 @@ const Hero = () => {
 
             {/* Background Layer - Full Width, Behind Everything */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Animated floating orbs - fast, subtle drifting with breathing */}
-                {/* Lower opacity (5-8%) to match background of other sections */}
-                <div className="absolute top-[5%] right-[5%] w-[500px] h-[500px] bg-blue-800/8 rounded-full blur-[100px] animate-hero-orb-1"></div>
-                <div className="absolute top-[30%] left-[2%] w-[400px] h-[400px] bg-blue-700/6 rounded-full blur-[80px] animate-hero-orb-2"></div>
-                <div className="absolute bottom-[10%] right-[10%] w-[550px] h-[550px] bg-slate-400/5 rounded-full blur-[120px] animate-hero-orb-3"></div>
-                <div className="absolute bottom-[5%] left-[5%] w-[420px] h-[420px] bg-blue-900/7 rounded-full blur-[90px] animate-hero-orb-4"></div>
-                <div className="absolute top-[40%] left-[35%] w-[450px] h-[450px] bg-indigo-600/5 rounded-full blur-[110px] animate-hero-orb-5"></div>
+                {/* Animated floating orbs - optimized: reduced from 5 to 3, lower blur intensity */}
+                <div className="absolute top-[5%] right-[5%] w-[400px] h-[400px] bg-blue-800/8 rounded-full blur-[60px] animate-hero-orb-1 will-change-transform"></div>
+                <div className="absolute bottom-[10%] right-[10%] w-[450px] h-[450px] bg-slate-400/5 rounded-full blur-[70px] animate-hero-orb-3 will-change-transform"></div>
+                <div className="absolute top-[40%] left-[10%] w-[380px] h-[380px] bg-indigo-600/5 rounded-full blur-[65px] animate-hero-orb-5 will-change-transform"></div>
             </div>
 
             {/* Content Layer - Centered with max-width (matches other sections) */}
@@ -44,7 +41,7 @@ const Hero = () => {
                                 />
                             </div>
                             {/* Decorative navy gradient behind */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-slate-400/20 rounded-full scale-110 -z-0 translate-y-6 blur-2xl animate-gradient-shift"></div>
+                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-slate-400/20 rounded-full scale-110 -z-0 translate-y-6 blur-xl animate-gradient-shift will-change-transform"></div>
                         </motion.div>
 
                         <motion.div
@@ -119,7 +116,9 @@ const Hero = () => {
             </div>
         </div>
     );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;
 

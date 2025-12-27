@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { profileData } from '../data/profile';
@@ -6,7 +6,7 @@ import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaMapMarkerAlt, FaPhone, FaEn
 import { HiX } from 'react-icons/hi';
 import { smoothScrollTo } from '../utils/smoothScroll';
 
-const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
+const Sidebar = memo(({ isMobileOpen, setIsMobileOpen }) => {
     const location = useLocation();
     const navigate = useNavigate();
     const isHome = location.pathname === '/' || location.pathname === '';
@@ -202,7 +202,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
                             className="fixed inset-y-0 left-0 w-80 z-50 lg:hidden"
                         >
                             {/* Mobile Drawer Content */}
-                            <div className="h-full flex flex-col relative overflow-hidden bg-gradient-to-b from-white via-slate-50/95 to-slate-100/90 backdrop-blur-2xl border-r border-slate-200/80 shadow-[4px_0_30px_-12px_rgba(0,0,0,0.15)]">
+                            <div className="h-full flex flex-col relative overflow-hidden bg-gradient-to-b from-white via-slate-50/98 to-slate-100/95 border-r border-slate-200/80 shadow-[4px_0_30px_-12px_rgba(0,0,0,0.15)]">
                                 {/* Decorative Background Elements with ambient animation - subtle */}
                                 <div className="absolute top-0 right-0 w-72 h-72 bg-blue-900/8 rounded-full blur-3xl -mr-36 -mt-36 pointer-events-none animate-float-orb"></div>
                                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-slate-400/12 rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none animate-float-orb-delayed"></div>
@@ -349,14 +349,14 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsMobileOpen(false)}
-                            className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 lg:hidden"
+                            className="fixed inset-0 bg-slate-900/50 z-40 lg:hidden"
                         />
                     </>
                 )}
             </AnimatePresence>
         </>
     );
-};
+});
 
 // Premium Contact Card Component
 const ContactCard = ({ icon, label, text, href, copyable, smallText, compact, truncate }) => {
@@ -375,7 +375,7 @@ const ContactCard = ({ icon, label, text, href, copyable, smallText, compact, tr
 
     return (
         <Wrapper {...wrapperProps}>
-            <div className={`group relative flex items-center ${compact ? 'p-3' : 'p-4'} bg-white/80 hover:bg-white border border-slate-200/80 hover:border-blue-900/20 ${compact ? 'rounded-xl' : 'rounded-2xl'} transition-all duration-300 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 backdrop-blur-sm cursor-default overflow-hidden`}>
+            <div className={`group relative flex items-center ${compact ? 'p-3' : 'p-4'} bg-white/90 hover:bg-white border border-slate-200/80 hover:border-blue-900/20 ${compact ? 'rounded-xl' : 'rounded-2xl'} transition-all duration-300 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 cursor-default overflow-hidden`}>
 
                 {/* Icon Box */}
                 <div className={`flex-shrink-0 ${compact ? 'w-9 h-9' : 'w-11 h-11'} flex items-center justify-center bg-gradient-to-br from-slate-100 to-blue-50 text-blue-900 rounded-xl group-hover:scale-105 transition-transform duration-300 border border-slate-200/50`}>
@@ -421,5 +421,7 @@ const SocialIcon = ({ href, icon, label, hoverClass }) => (
         </span>
     </a>
 );
+
+Sidebar.displayName = 'Sidebar';
 
 export default Sidebar;

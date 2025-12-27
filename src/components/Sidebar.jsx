@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { profileData } from '../data/profile';
 import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaMapMarkerAlt, FaPhone, FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
-import { HiX } from 'react-icons/hi';
 import { smoothScrollTo } from '../utils/smoothScroll';
 
 const Sidebar = memo(({ isMobileOpen, setIsMobileOpen }) => {
@@ -143,6 +142,7 @@ const Sidebar = memo(({ isMobileOpen, setIsMobileOpen }) => {
                         icon={<FaPhone />}
                         label="Phone"
                         text={profileData.phone}
+                        href={`tel:${profileData.phone.replace(/\s/g, '')}`}
                         copyable
                     />
                     <ContactCard
@@ -217,25 +217,11 @@ const Sidebar = memo(({ isMobileOpen, setIsMobileOpen }) => {
                                     }}
                                 ></div>
 
-                                {/* Close Button - Mobile Only */}
-                                <button
-                                    onClick={() => setIsMobileOpen(false)}
-                                    className="absolute top-4 right-4 z-20 p-2.5 bg-white/90 hover:bg-slate-100 border border-slate-200 rounded-full shadow-card text-slate-500 hover:text-slate-700 transition-all duration-200 active:scale-95"
-                                    aria-label="Close menu"
-                                >
-                                    <HiX size={20} />
-                                </button>
-
                                 <div className="relative h-full flex flex-col px-6 py-8 overflow-y-auto no-scrollbar">
 
                                     {/* Zone 1: Identity (Compact for Mobile) */}
-                                    <motion.div
-                                        initial="hidden"
-                                        animate="visible"
-                                        variants={containerVariants}
-                                        className="flex flex-col items-center text-center w-full"
-                                    >
-                                        <motion.div variants={itemVariants} className="relative group cursor-default">
+                                    <div className="flex flex-col items-center text-center w-full">
+                                        <div className="relative group cursor-default">
                                             <div className="absolute -inset-1 bg-gradient-to-tr from-slate-300 via-blue-200 to-slate-300 rounded-full opacity-60"></div>
                                             <div className="absolute -inset-0.5 bg-gradient-to-tr from-slate-200 via-blue-100 to-slate-200 rounded-full opacity-70"></div>
                                             <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-premium">
@@ -245,58 +231,42 @@ const Sidebar = memo(({ isMobileOpen, setIsMobileOpen }) => {
                                                     className="w-full h-full object-cover"
                                                 />
                                             </div>
-                                        </motion.div>
+                                        </div>
 
-                                        <motion.div variants={itemVariants} className="mt-4 space-y-2">
+                                        <div className="mt-4 space-y-2">
                                             <h1 className="text-2xl font-bold tracking-tight leading-none text-navy-gradient">
                                                 {profileData.name}
                                             </h1>
                                             <p className="text-xs font-semibold text-blue-900 uppercase tracking-widest bg-blue-900/5 px-3 py-1.5 rounded-full inline-block border border-blue-900/10">
                                                 Finance & Analytics
                                             </p>
-                                        </motion.div>
-                                    </motion.div>
+                                        </div>
+                                    </div>
 
                                     {/* Divider */}
-                                    <motion.div
-                                        initial={{ scaleX: 0 }}
-                                        animate={{ scaleX: 1 }}
-                                        transition={{ delay: 0.3, duration: 0.6 }}
-                                        className="w-full h-px bg-gradient-to-r from-transparent via-blue-900/20 to-transparent my-6"
-                                    ></motion.div>
+                                    <div className="w-full h-px bg-gradient-to-r from-transparent via-blue-900/20 to-transparent my-6"></div>
 
                                     {/* Zone 2: Navigation Links (Mobile Only) */}
-                                    <motion.div
-                                        initial="hidden"
-                                        animate="visible"
-                                        variants={containerVariants}
-                                        className="flex flex-col gap-1 w-full"
-                                    >
+                                    <div className="flex flex-col gap-1 w-full">
                                         <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 px-1">
                                             Navigate
                                         </h3>
                                         {navLinks.map((link) => (
-                                            <motion.button
+                                            <button
                                                 key={link.id}
-                                                variants={itemVariants}
                                                 onClick={() => handleNavClick(link.id)}
                                                 className="w-full px-4 py-3 text-left text-sm font-medium text-slate-700 hover:text-blue-900 hover:bg-blue-50/80 rounded-xl transition-all duration-200 active:scale-[0.98]"
                                             >
                                                 {link.name}
-                                            </motion.button>
+                                            </button>
                                         ))}
-                                    </motion.div>
+                                    </div>
 
                                     {/* Divider */}
                                     <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-5"></div>
 
                                     {/* Zone 3: Contact Cards (Compact) */}
-                                    <motion.div
-                                        initial="hidden"
-                                        animate="visible"
-                                        variants={containerVariants}
-                                        className="flex flex-col gap-2 w-full"
-                                    >
+                                    <div className="flex flex-col gap-2 w-full">
                                         <ContactCard
                                             icon={<FaMapMarkerAlt />}
                                             label="Location"
@@ -307,6 +277,7 @@ const Sidebar = memo(({ isMobileOpen, setIsMobileOpen }) => {
                                             icon={<FaPhone />}
                                             label="Phone"
                                             text={profileData.phone}
+                                            href={`tel:${profileData.phone.replace(/\s/g, '')}`}
                                             compact
                                         />
                                         <ContactCard
@@ -317,18 +288,13 @@ const Sidebar = memo(({ isMobileOpen, setIsMobileOpen }) => {
                                             compact
                                             truncate
                                         />
-                                    </motion.div>
+                                    </div>
 
                                     {/* Spacer */}
                                     <div className="flex-grow"></div>
 
                                     {/* Zone 4: Socials */}
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ delay: 0.5 }}
-                                        className="mt-6"
-                                    >
+                                    <div className="mt-6">
                                         <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest text-center mb-3">
                                             Connect
                                         </h3>
@@ -338,7 +304,7 @@ const Sidebar = memo(({ isMobileOpen, setIsMobileOpen }) => {
                                             <SocialIcon href={profileData.twitter} icon={<FaTwitter size={20} />} label="Twitter" hoverClass="hover:bg-sky-600" />
                                             <SocialIcon href={profileData.blog} icon={<FaGlobe size={20} />} label="Website" hoverClass="hover:bg-blue-900" />
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

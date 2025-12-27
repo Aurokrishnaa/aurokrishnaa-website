@@ -1,38 +1,63 @@
-#  Aurokrishnaa Ravindran Lakshmi – Personal Portfolio Website
+# Personal Portfolio Website - Aurokrishnaa Ravindran Lakshmi
 
-Welcome to the source code for my personal website, [www.aurokrishnaa.me](https://www.aurokrishnaa.me) — a curated showcase of my professional journey, finance projects, and research work.
+A professional portfolio website showcasing experience, projects, research, and expertise in financial analytics and quantitative finance.
 
-##  About the Site
+## About
 
-This is a fully responsive portfolio website built using HTML5 and CSS3. It highlights:
+This is the personal website of Aurokrishnaa Ravindran Lakshmi, a finance professional with a background in quantitative modeling, derivatives pricing, fixed income analytics, portfolio construction, and data-driven investment research. The site serves as a comprehensive portfolio for recruiters, collaborators, and professional connections.
 
--  **Education** – MS in Finance (Quantitative Finance) from University at Buffalo and MBA in Finance from Anna University  
--  **Professional Experience** – Including roles in derivatives teaching, investment advising, donor strategy, and more  
--  **Finance Projects** – 30+ applied and academic projects in derivatives, portfolio theory, fixed income, NLP, and algorithmic trading  
--  **Research Papers** – Links to published and thesis-level academic work  
-- ✉ **Contact Section** – With social links, message form, and responsive sidebar  
+**Live Site:** [https://aurokrishnaa.me](https://aurokrishnaa.me)
 
-##  Tech Stack
+## Tech Stack
 
-- **HTML5**, **CSS3**, **Font Awesome**
-- Responsive layout based on the HTMLUP5 - Miniport
-- Custom styling and layout enhancements tailored for academic/finance portfolios
+- React 19
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
 
-##  Live Website
+## Website Sections
 
-[https://www.aurokrishnaa.me](https://www.aurokrishnaa.me)
+- **Hero** - Professional introduction and credentials
+- **Education** - Academic background (MS Finance, MBA, MS Commerce)
+- **Experience** - Professional roles and accomplishments
+- **Projects** - Applied finance and analytics work
+- **Research** - Published papers and thesis work
+- **Contact** - Professional contact information and social links
+- **Resume** - Downloadable PDF resume with embedded viewer
 
-## 📂 Project Structure
+## Local Development
 
-📁 /assets
-└── css/
-└── main.css # Custom styles
-📁 /images
-└── profile.jpg # Profile image
-index.html # Main HTML page
-resume.html # Resume page
+Clone the repository and install dependencies:
 
+```bash
+npm install
+```
 
----
+Start the development server:
 
-> Built with care and coffee — to showcase passion for finance, strategy, and data-driven thinking.
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+The site is deployed to GitHub Pages. Production builds are generated from the `main` branch and served at the custom domain configured for this repository.
+
+## Screenshot
+
+![Website Preview](screenshot.png)
+
+*Screenshot placeholder - add a preview image named `screenshot.png` to display here.*

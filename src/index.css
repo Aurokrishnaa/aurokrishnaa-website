@@ -1,0 +1,541 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", system-ui, sans-serif;
+    --color-slate-850: #1a202c;
+    --color-navy-800: #1e3a5f;
+    --color-navy-700: #234b6e;
+    --color-navy-600: #2c5a7c;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        @apply bg-slate-100 text-slate-800 font-sans;
+        background-image:
+            linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    /* Premium Navy Selection */
+    ::selection {
+        @apply bg-blue-900/20 text-blue-900;
+    }
+
+    /* Refined Scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-slate-200;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-slate-400 rounded-full;
+        border: 2px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-slate-500;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Premium Navy Gradient Text */
+    .text-navy-gradient {
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-blue-800 to-slate-800;
+    }
+
+    /* Premium Shadow Utilities */
+    .shadow-premium {
+        box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.05),
+            0 10px 15px -3px rgba(0, 0, 0, 0.08),
+            0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    .shadow-premium-hover {
+        box-shadow:
+            0 10px 15px -3px rgba(0, 0, 0, 0.08),
+            0 20px 30px -5px rgba(0, 0, 0, 0.1),
+            0 30px 40px -10px rgba(0, 0, 0, 0.05);
+    }
+
+    .shadow-card {
+        box-shadow:
+            0 1px 3px rgba(0, 0, 0, 0.04),
+            0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .shadow-card-hover {
+        box-shadow:
+            0 4px 12px rgba(0, 0, 0, 0.08),
+            0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Subtle Navy Border Glow */
+    .ring-navy-glow:hover {
+        box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* Fade In Up Animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fadeInUp {
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    /* Subtle Float Animation */
+    @keyframes subtleFloat {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-4px);
+        }
+    }
+
+    .animate-subtle-float {
+        animation: subtleFloat 4s ease-in-out infinite;
+    }
+
+    /* Pulse Ring Animation */
+    @keyframes pulseRing {
+
+        0%,
+        100% {
+            opacity: 0.6;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.8;
+            transform: scale(1.02);
+        }
+    }
+
+    .animate-pulse-ring {
+        animation: pulseRing 3s ease-in-out infinite;
+    }
+
+    /* ========================================
+       PREMIUM UI/UX ANIMATIONS
+       ======================================== */
+
+    /* Shimmer/Shine Effect */
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    .animate-shimmer {
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                transparent 100%);
+        background-size: 200% 100%;
+        animation: shimmer 2s ease-in-out infinite;
+    }
+
+    /* Gradient Shift for Background Orbs */
+    @keyframes gradientShift {
+
+        0%,
+        100% {
+            opacity: 0.5;
+            transform: scale(1) translate(0, 0);
+        }
+
+        33% {
+            opacity: 0.7;
+            transform: scale(1.05) translate(5px, -5px);
+        }
+
+        66% {
+            opacity: 0.6;
+            transform: scale(0.98) translate(-3px, 3px);
+        }
+    }
+
+    .animate-gradient-shift {
+        animation: gradientShift 8s ease-in-out infinite;
+    }
+
+    /* Floating Animation for Decorative Elements - More Pronounced */
+    @keyframes floatOrb {
+
+        0%,
+        100% {
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        25% {
+            transform: translateY(-20px) translateX(15px) scale(1.02);
+        }
+
+        50% {
+            transform: translateY(-10px) translateX(-10px) scale(0.98);
+        }
+
+        75% {
+            transform: translateY(-30px) translateX(8px) scale(1.01);
+        }
+    }
+
+    .animate-float-orb {
+        animation: floatOrb 10s ease-in-out infinite;
+    }
+
+    .animate-float-orb-delayed {
+        animation: floatOrb 12s ease-in-out infinite;
+        animation-delay: -4s;
+    }
+
+    /* ========================================
+       HERO SECTION - PREMIUM FLOATING ORBS
+       Slow drifting + layered breathing effect
+       ======================================== */
+
+    /* Orb 1: Large, slow diagonal drift - top right area */
+    @keyframes heroOrbDrift1 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        20% {
+            transform: translate(-60px, 40px);
+        }
+
+        40% {
+            transform: translate(-30px, 80px);
+        }
+
+        60% {
+            transform: translate(40px, 50px);
+        }
+
+        80% {
+            transform: translate(50px, -20px);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Orb 2: Medium, meandering drift - left area */
+    @keyframes heroOrbDrift2 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        25% {
+            transform: translate(70px, -30px);
+        }
+
+        50% {
+            transform: translate(40px, 60px);
+        }
+
+        75% {
+            transform: translate(-40px, 30px);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Orb 3: Large, slow circular drift - bottom right */
+    @keyframes heroOrbDrift3 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        15% {
+            transform: translate(-80px, -30px);
+        }
+
+        35% {
+            transform: translate(-100px, 40px);
+        }
+
+        55% {
+            transform: translate(-20px, 70px);
+        }
+
+        75% {
+            transform: translate(60px, 20px);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Orb 4: Smaller, gentle drift - bottom left */
+    @keyframes heroOrbDrift4 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        30% {
+            transform: translate(50px, -40px);
+        }
+
+        60% {
+            transform: translate(80px, 30px);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Orb 5: Center-ish, subtle wandering */
+    @keyframes heroOrbDrift5 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        20% {
+            transform: translate(-30px, 50px);
+        }
+
+        45% {
+            transform: translate(60px, 70px);
+        }
+
+        70% {
+            transform: translate(40px, -30px);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Breathing/pulse animation - layered on top of drift */
+    /* Subtle opacity pulse to stay elegant */
+    @keyframes heroOrbBreath {
+
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.7;
+            transform: scale(1.08);
+        }
+    }
+
+    /* Combined animation classes - drift + breath layered (faster movement) */
+    .animate-hero-orb-1 {
+        animation:
+            heroOrbDrift1 14s ease-in-out infinite,
+            heroOrbBreath 4s ease-in-out infinite;
+    }
+
+    .animate-hero-orb-2 {
+        animation:
+            heroOrbDrift2 16s ease-in-out infinite,
+            heroOrbBreath 5s ease-in-out infinite;
+        animation-delay: -3s, -1s;
+    }
+
+    .animate-hero-orb-3 {
+        animation:
+            heroOrbDrift3 18s ease-in-out infinite,
+            heroOrbBreath 6s ease-in-out infinite;
+        animation-delay: -6s, -2s;
+    }
+
+    .animate-hero-orb-4 {
+        animation:
+            heroOrbDrift4 12s ease-in-out infinite,
+            heroOrbBreath 4.5s ease-in-out infinite;
+        animation-delay: -2s, -1.5s;
+    }
+
+    .animate-hero-orb-5 {
+        animation:
+            heroOrbDrift5 15s ease-in-out infinite,
+            heroOrbBreath 5.5s ease-in-out infinite;
+        animation-delay: -5s, -2.5s;
+    }
+
+    /* Glow Pulse for Interactive Elements */
+    @keyframes glowPulse {
+
+        0%,
+        100% {
+            box-shadow: 0 0 0 0 rgba(30, 58, 138, 0);
+        }
+
+        50% {
+            box-shadow: 0 0 20px 5px rgba(30, 58, 138, 0.15);
+        }
+    }
+
+    .animate-glow-pulse {
+        animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    /* Breathing Glow for Profile Picture */
+    @keyframes breathingGlow {
+
+        0%,
+        100% {
+            box-shadow:
+                0 0 0 0 rgba(30, 58, 138, 0.1),
+                0 0 30px -10px rgba(30, 58, 138, 0.2);
+        }
+
+        50% {
+            box-shadow:
+                0 0 0 4px rgba(30, 58, 138, 0.05),
+                0 0 40px -5px rgba(30, 58, 138, 0.3);
+        }
+    }
+
+    .animate-breathing-glow {
+        animation: breathingGlow 4s ease-in-out infinite;
+    }
+
+    /* Page Transition Fade */
+    @keyframes pageFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-page-enter {
+        animation: pageFadeIn 0.4s ease-out forwards;
+    }
+
+    /* Stagger Animation Delays */
+    .stagger-1 {
+        animation-delay: 0.1s;
+    }
+
+    .stagger-2 {
+        animation-delay: 0.2s;
+    }
+
+    .stagger-3 {
+        animation-delay: 0.3s;
+    }
+
+    .stagger-4 {
+        animation-delay: 0.4s;
+    }
+
+    .stagger-5 {
+        animation-delay: 0.5s;
+    }
+
+    /* Draw Line Animation */
+    @keyframes drawLine {
+        from {
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+
+        to {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+    }
+
+    .animate-draw-line {
+        animation: drawLine 1s ease-out forwards;
+    }
+
+    /* Magnetic Button Effect */
+    .magnetic-hover {
+        transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .magnetic-hover:hover {
+        transform: translateY(-2px);
+    }
+
+    .magnetic-hover:active {
+        transform: translateY(0) scale(0.98);
+    }
+
+    /* Reduced Motion Support */
+    @media (prefers-reduced-motion: reduce) {
+
+        .animate-shimmer,
+        .animate-gradient-shift,
+        .animate-float-orb,
+        .animate-float-orb-delayed,
+        .animate-glow-pulse,
+        .animate-breathing-glow,
+        .animate-page-enter,
+        .animate-draw-line,
+        .animate-fadeInUp,
+        .animate-subtle-float,
+        .animate-pulse-ring,
+        .animate-hero-orb-1,
+        .animate-hero-orb-2,
+        .animate-hero-orb-3,
+        .animate-hero-orb-4,
+        .animate-hero-orb-5 {
+            animation: none !important;
+        }
+
+        .magnetic-hover:hover {
+            transform: none;
+        }
+    }
+}

@@ -383,11 +383,11 @@ const ContactCard = ({ icon, label, text, href, copyable, smallText, compact, tr
                 </div>
 
                 {/* Text Content */}
-                <div className={`${compact ? 'ml-3' : 'ml-4'} flex-grow min-w-0`}>
+                <div className={`${compact ? 'ml-3' : 'ml-4'} flex-grow min-w-0 overflow-hidden`}>
                     <p className={`${compact ? 'text-[10px]' : 'text-[11px]'} uppercase font-bold text-slate-400 tracking-wider mb-0.5`}>
                         {label}
                     </p>
-                    <p className={`${smallText ? 'text-xs' : compact ? 'text-sm' : 'text-base'} font-semibold text-slate-800 group-hover:text-blue-900 transition-colors break-all`}>
+                    <p className={`${smallText || truncate ? 'text-xs' : compact ? 'text-sm' : 'text-base'} font-semibold text-slate-800 group-hover:text-blue-900 transition-colors ${truncate ? 'truncate' : 'break-all'}`}>
                         {text}
                     </p>
                 </div>

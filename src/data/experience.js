@@ -1,6 +1,6 @@
 export const experienceData = [
     {
-        title: "Strategic & Investment Advisory Fellow",
+        title: "Investment Taxonomy & Research Analyst",
         institution: "Photis Wealth AI",
         location: "Singapore - Remote",
         period: "Sept 2025 – Present",
@@ -69,7 +69,7 @@ export const experienceData = [
     },
     {
         title: "Instructor – Financial Accounting",
-        institution: "Aurochild International Senior Secondary School CBSE",
+        institution: "Aurochild International Senior Secondary School CBSE (Hybrid)",
         location: "Tamil Nadu, India",
         period: "May 2020 – Jun 2023",
         description: "Delivered instruction in finance, economics, and investment literacy, translating complex concepts into practical, student-friendly frameworks.",
@@ -83,7 +83,7 @@ export const experienceData = [
         title: "Human Resources Associate",
         institution: "The Residency Hotels",
         location: "Tamil Nadu, India",
-        period: "May 2021 – May 2022",
+        period: "April 2021 – Jan 2022",
         description: "Supported end-to-end HR operations, including recruitment coordination, onboarding, payroll support, and compliance documentation.",
         details: [
             "Assisted with workforce planning and HR reporting, aligning staffing needs with operational requirements.",

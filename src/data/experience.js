@@ -1,6 +1,6 @@
 export const experienceData = [
     {
-        title: "Investment Taxonomy & Research Analyst",
+        title: "Investments & Research Analyst",
         institution: "Photis Wealth AI",
         location: "Singapore - Remote",
         period: "Sept 2025 – Present",

@@ -1,107 +1,121 @@
 # Aurokrishnaa Ravindran Lakshmi
-Personal Portfolio Website | Quantitative Finance and Financial Analytics
+Personal Portfolio Website | Quantitative Finance, Financial Analytics, and Applied Research
 
-This repository hosts the source code for my personal portfolio website. It brings together my academic background, professional experience, and applied work across quantitative finance, financial analytics, investment research, and financial technology.
+This repository contains the source code for my personal portfolio website - a curated presentation of my background, experience, projects, and applied work across quantitative finance, financial analytics, investment research, and financial technology.
 
-This is a personal body of work. 
-It is not a template, starter kit, or reusable project.
+This is a personal portfolio repository.
+It is not a template, starter kit, or reusable framework.
 
 Live website: https://aurokrishnaa.me
 
 ---
 
-## Why This Exists
+## Why This Website Exists
 
-A resume is useful, but it rarely shows how someone actually thinks. 
+A resume can summarize experience, but it rarely shows how someone thinks.
 
-This website exists to present my work in a more honest and complete way. It reflects how I approach financial problems, how I learn, and how my interests have evolved across markets, instruments, and analytical methods. 
+I built this website to present my work in a more complete and honest way - not just what I have done, but how I approach problems, structure analysis, and connect finance with data, modeling, and technology.
 
-Some sections are meant to be scanned quickly. Others are meant to be explored slowly. Everything here is intentional.
+Some sections are designed for quick scanning.
+Others are meant to be explored in depth.
+Everything here is intentional and continuously refined.
+
+---
+
+## What This Repository Represents
+
+This codebase powers my public portfolio and serves as a living record of my professional direction.
+
+It brings together:
+
+- Academic background in finance, accounting, and quantitative methods
+- Professional experience across finance, analytics, operations, and education
+- Applied projects in investment analysis, derivatives, fixed income, and financial modeling
+- Finance + technology work including Python workflows, dashboards, automation, and research prototypes
+
+The goal is not just presentation - it is clarity, credibility, and signal.
 
 ---
 
 ## Academic Background
 
-My academic path has been broad by design and progressively more quantitative over time. I hold the following degrees and qualifications:
+My academic path has been broad by design and increasingly quantitative over time. This portfolio reflects that progression.
 
-* **Master of Science in Finance (Quantitative Finance)**
-  University at Buffalo, SUNY
-  Focus on derivatives, fixed income, portfolio theory, quantitative methods, and financial modeling.
+### Degrees and Qualifications
+- **Master of Science in Finance (Quantitative Finance)** - University at Buffalo, SUNY  
+  Focus areas include derivatives, fixed income, portfolio theory, quantitative methods, and financial modeling.
 
-* **Master of Business Administration (Finance)**
-  Anna University
+- **Master of Business Administration (Finance)** - Anna University  
   Strong grounding in corporate finance, investment analysis, strategy, and applied business decision-making.
 
-* **Master of Commerce (Accounting and Finance)**
-  Advanced exposure to accounting, taxation, financial reporting, and analytical finance.
+- **Master of Commerce (Accounting and Finance)** Advanced exposure to accounting, taxation, financial reporting, and analytical finance.
 
-* **Diploma in Goods and Services Tax (GST)**
-  Specialized study of indirect taxation and regulatory compliance in India.
+- **Diploma in Goods and Services Tax (GST)** Specialized study in indirect taxation and regulatory compliance in India.
 
-* **Bachelor of Commerce (Finance and Accounting)**
-  Foundation in accounting, economics, business law, and financial systems.
+- **Bachelor of Commerce (Finance and Accounting)** Foundation in accounting, economics, business law, and financial systems.
 
-While I do not always list every credential publicly, this repository reflects the full academic arc that shaped my thinking.
+While I do not always list every credential in every application, this repository reflects the broader academic arc that shaped my approach.
 
 ---
 
-## Professional Experience
+## Professional Focus
 
-My professional experience spans finance management, analytics, education, and applied research. I have worked in roles involving:
+My work spans finance, analytics, education, and applied research. Across roles and projects, I have worked on:
 
-* Financial analysis and reporting.
-* Budgeting, forecasting, and fund tracking.
-* Investment-related decision support.
-* Academic support and teaching in quantitative finance and derivatives.
-* Project-based analytical and research work.
+- Financial analysis and reporting
+- Budgeting, forecasting, and fund tracking
+- Investment-related research and decision support
+- Quantitative finance teaching support (derivatives and pricing concepts)
+- Project-based analytical work across finance and operations
 
-Alongside formal roles, I have consistently worked on independent projects that combine finance with programming, data analysis, and modeling. I am most interested in roles where analytical rigor, market intuition, and structured problem-solving matter more than buzzwords.
+I am especially interested in roles where analytical rigor, structured thinking, and practical execution matter more than buzzwords.
 
 ---
 
 ## Core Areas of Work
 
-My work sits at the intersection of several financial domains rather than a single narrow niche.
+My work sits at the intersection of multiple financial domains rather than a single narrow niche.
 
 ### Derivatives and Volatility
-* Black-Scholes-Merton pricing with Greeks and hedging intuition.
-* Volatility modeling and VIX replication.
-* Structured payoff analysis and asymmetric risk profiles.
+- Black-Scholes-Merton pricing, Greeks, and hedging intuition
+- Volatility modeling and VIX replication
+- Structured payoff analysis and asymmetric risk understanding
 
 ### Portfolio Construction and Risk
-* Multi-asset portfolio optimization using simulation techniques.
-* Risk measurement using VaR, drawdowns, and stress testing.
-* Strategy design informed by both theory and market behavior.
+- Multi-asset portfolio optimization using simulation approaches
+- Risk measurement using VaR, drawdowns, and stress testing
+- Strategy design informed by both theory and market behavior
 
 ### Fixed Income and Rates
-* Bond analytics including duration, convexity, and spread analysis.
-* Yield curve interpretation and scenario-based analysis.
-* Portfolio modeling using institutional-style tools.
+- Bond analytics including duration, convexity, and spread analysis
+- Yield curve interpretation and scenario-based analysis
+- Portfolio modeling using institutional-style tools
 
 ### FinTech and Automation
-* Algorithmic trading systems with live brokerage integration.
-* NLP-based analysis of earnings calls and corporate disclosures.
-* Interactive dashboards for financial analysis and visualization.
+- Algorithmic trading systems with brokerage integration
+- NLP-based analysis of earnings calls and disclosures
+- Interactive dashboards for financial analysis and visualization
+- Python-based workflows for research, validation, and reporting
 
 ---
 
-## Technical Stack
+## Tech Stack
 
-The website is built using a modern, performance-focused frontend stack.
+This website is built using a modern frontend stack focused on performance, clean UI, and maintainability.
 
-| Technology | Implementation |
+| Technology | Role |
 |:---|:---|
-| React 19 | Component-based user interface |
+| React 19 | Component-based UI |
 | Vite | Fast development and optimized builds |
-| Tailwind CSS 4 | Utility-first styling with a consistent design system |
-| Framer Motion | Subtle animations and transitions |
-| React Router 7 | Client-side routing and navigation |
+| Tailwind CSS 4 | Utility-first styling and design consistency |
+| Framer Motion | Animations and transitions |
+| React Router 7 | Client-side routing |
 
 ---
 
-## Project Structure
+## Repository Structure
 
-The codebase is organized to keep content, layout, and logic clearly separated.
+The project is organized to keep content, layout, and logic clearly separated.
 
 ```text
 src/
@@ -133,27 +147,30 @@ public/
 └── favicon.svg
 ```
 
----
-
 ## About This Repository
 
-This repository is public for visibility, not reuse.
+This repository is public for visibility and professional context - not for reuse.
 
-* It is not intended to be cloned.
-* It is not maintained as a framework.
-* It reflects personal choices in structure, content, and presentation.
+- It is not maintained as a template or framework
+- It reflects personal design, content, and architecture choices
+- It may evolve frequently as I update projects, experience, and research work
 
-If something here inspires an idea, that is fine. If you are looking for a reusable codebase, this is not that.
+If something here inspires an idea, that is great. If you are looking for a reusable portfolio starter, this repository is not intended for that purpose.
 
----
+## Deployment
+
+The site is hosted via GitHub Pages with a custom domain and is served at:
+https://aurokrishnaa.me
+
+Production builds are generated from the `main` branch and deployed as the live portfolio site.
 
 ## Contact
 
-The site is hosted using GitHub Pages with a custom domain. Production builds are generated from the main branch and served at aurokrishnaa.me.
+If my work aligns with your team, project, or interests, feel free to reach out.
 
-If something here aligns with your work or interests, you can reach me through:
+- **LinkedIn:** https://www.linkedin.com/in/aurokrishnaa/
+- **GitHub:** https://github.com/Aurokrishnaa
+- **Writing and experiments:** https://auronomics.com
+- **Email:** aurokrishnaa2000@gmail.com
 
-* LinkedIn: https://www.linkedin.com/in/aurokrishnaa/
-* GitHub: https://github.com/Aurokrishnaa
-* Writing and experiments: https://auronomics.com
-* Email: aurokrishnaa2000@gmail.com
+```
